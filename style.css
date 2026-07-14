@@ -1,0 +1,146 @@
+/* Reset basic styling agar rapi di semua browser */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Background utama dengan tema gelap malam yang estetik */
+body {
+    background: #080711;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Container kartu transparan (Glassmorphism) */
+.card-container {
+    position: relative;
+    width: 90%;
+    max-width: 420px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    padding: 45px 30px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 
+                inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    z-index: 2;
+}
+
+/* Efek lingkaran cahaya neon di belakang kartu */
+.glow-circle {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: -1;
+}
+.top-left {
+    background: #00f2fe; /* Warna Cyan Neon */
+    top: -30px;
+    left: -30px;
+}
+.bottom-right {
+    background: #4facfe; /* Warna Biru Electric */
+    bottom: -30px;
+    right: -30px;
+}
+
+/* Animasi melayang lembut untuk emoji */
+.main-emoji {
+    font-size: 5rem;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Styling teks */
+.title {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-top: 20px;
+    letter-spacing: -0.5px;
+}
+
+.message {
+    color: #a5a1c2;
+    font-size: 0.95rem;
+    margin-top: 12px;
+    line-height: 1.6;
+}
+
+.question {
+    color: #00f2fe;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 30px 0;
+    text-shadow: 0 0 15px rgba(0, 242, 254, 0.4); /* Efek teks menyala */
+}
+
+/* Styling grup tombol */
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    height: 50px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-size: 0.95rem;
+}
+
+/* Tombol Traktiran (Primary) */
+.btn-primary {
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    color: #080711;
+    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.6);
+}
+
+/* Tombol Kado (Secondary - bakal menghindar) */
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dekorasi konfeti kecil saat tombol diklik */
+.confetti {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background-color: #00f2fe;
+    position: absolute;
+    animation: fall 2s linear forwards;
+}
+
+/* Keyframes Animasi Melayang */
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Keyframes Animasi Konfeti Jatuh */
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
